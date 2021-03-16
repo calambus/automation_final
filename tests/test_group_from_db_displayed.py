@@ -4,10 +4,10 @@ from pages.main_admin_page import MainAdminPage
 from helpers.general_helpers import generate_string
 from pages.add_user_page import AddUserPage
 from helpers.db_helper import check_user_in_group_db, clear_db_user_groups_table, clear_db_user_not_admin
-
 def test_browser(browser):
     bp = BasePage(browser)
     bp.open_base_page()
+
 
 def test_ad_user_with_group(browser, create_group):
     username = generate_string(6)

@@ -23,4 +23,5 @@ def check_user_in_group_db(username: str, groupname: str):
     '''
     engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
     t = engine.execute(query).fetchall()
+    print(t)
     return len(t) > 0
