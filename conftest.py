@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy import insert, delete
 from sqlalchemy import table, column
 from helpers.general_helpers import generate_string
+from helpers.db_helper import clear_db_user_not_admin, clear_db_user_groups_table
 
 
 @pytest.fixture()
@@ -31,9 +32,9 @@ def create_group():
     )
     engine.execute(stmt)
     yield name
+    clear_db_user_groups_table()
+    clear_db_user_not_admin()
     stmt = (
         delete(auth_group_table).where(auth_group_table.c.name == name)
     )
     engine.execute(stmt)
-
-

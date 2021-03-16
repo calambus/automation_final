@@ -21,6 +21,4 @@ def test_ad_user_with_group(browser, create_group):
     mp.open_add_user_page()
     au = AddUserPage(browser)
     au.add_user_with_group(username, password, create_group)
-    assert check_user_in_group_db(username, create_group), f'{username} not in {create_group} group'
-    clear_db_user_groups_table()
-    clear_db_user_not_admin()
+    check_user_in_group_db(username, create_group)
