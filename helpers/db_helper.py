@@ -7,7 +7,8 @@ def clear_db_user_groups_table():
 
 
 def clear_db_user_not_admin():
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
     engine.execute("DELETE FROM auth_user WHERE username != 'admin'")
 
 
@@ -21,6 +22,7 @@ def check_user_in_group_db(username: str, groupname: str, is_present=True):
     WHERE au.username in ('{username}')
         and ag.name in ('{groupname}')
     '''
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
     t = engine.execute(query).fetchall()
     assert (len(t) > 0) == is_present, f'{username} not in {groupname}'
