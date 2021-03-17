@@ -12,3 +12,5 @@ class MainAdminLOcators:
             return (By.XPATH, "//div[@class='app-auth module']//a[contains(text(),'Users')]")
         if param == 'groups':
             return (By.XPATH, "//div[@class='app-auth module']//a[contains(text(),'Groups')]")
+        if param == 'user_list':
+            return (By.XPATH, "//tr[@class='model-user']//a[contains(text(),'Add')]")

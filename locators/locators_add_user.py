@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class AddUserLocators:
     LOCATOR_USERNAME = (By.XPATH, "//input[@name='username']")
     LOCATOR_PASSWORD = (By.XPATH, "//input[@name='password1']")
