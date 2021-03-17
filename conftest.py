@@ -10,7 +10,7 @@ from helpers.db_helper import clear_db_user_not_admin, clear_db_user_groups_tabl
 @pytest.fixture()
 def browser():
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--maxim')
+    chrome_options.add_argument('--maximize')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
