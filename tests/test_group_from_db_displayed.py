@@ -25,6 +25,6 @@ def test_ad_user_with_group(browser, create_group):
         mp.open_users_or_groups_from_left_menu('user_list')
         au = AddUserPage(browser)
     with allure.step("Add User with assigned group"):
-        au.add_user_with_group(username, password, create_group)
+        au.add_user_with_group(username, password, create_group, browser)
     with allure.step("Check that group assigned to User in DB"):
         check_user_in_group_db(username, create_group)
