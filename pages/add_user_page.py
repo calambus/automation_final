@@ -2,7 +2,6 @@ from pages.base_page import BasePage
 from locators.locators_add_user import AddUserLocators
 from selenium.webdriver.support.ui import Select
 
-
 class AddUserPage(BasePage, AddUserLocators):
 
     def add_user_with_group(self, username, password, group):
