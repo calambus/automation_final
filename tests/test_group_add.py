@@ -8,8 +8,8 @@ allure.story("Check that created group in DB is isplayed in Groups list")
 
 
 def test_db_group_added_and_displayed(browser, create_group):
-    bp = BasePage(browser)
     with allure.step("Open Base page"):
+        bp = BasePage(browser)
         bp.open_base_page()
     with allure.step("Open Login page"):
         lg = LoginPage(browser)
