@@ -1,6 +1,7 @@
 from pages.base_page import BasePage
 from locators.locators_add_user import AddUserLocators
 from selenium.webdriver.support.ui import Select
+from time import sleep
 
 class AddUserPage(BasePage, AddUserLocators):
 
@@ -17,5 +18,6 @@ class AddUserPage(BasePage, AddUserLocators):
         select = Select(self.find_element(self.LOCATOR_GROUP_SELECT))
         select.select_by_visible_text(group)
         add_to_group = self.find_element(self.LOCATOR_ADD_SELECTED_GROUP)
+        sleep(4)
         add_to_group.click()
         save.click()
