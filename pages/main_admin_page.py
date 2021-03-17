@@ -7,13 +7,10 @@ class MainAdminPage(BasePage, MainAdminLOcators):
     def should_be_main_page(self):
         self.find_element(self.LOCATOR_MAIN_TITLE)
 
-    def open_groups_page(self):
-        groups_link = self.find_element(self.LOCATOR_GROUPS)
-        groups_link.click()
-
-    def open_users_page(self):
-        users_link = self.find_element(self.LOCATOR_USERS)
-        users_link.click()
+    def open_users_or_groups_from_left_menu(self, param):
+        locator = self.get_left_bar_users_or_groups_xpath(param)
+        link = self.find_element(locator)
+        link.click()
 
     def open_add_user_page(self):
         add_user_link = self.find_element(self.LOCATOR_ADD_USER)

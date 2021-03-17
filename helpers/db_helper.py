@@ -23,5 +23,4 @@ def check_user_in_group_db(username: str, groupname: str, is_present=True):
     '''
     engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
     t = engine.execute(query).fetchall()
-    #return len(t) > 0
     assert (len(t) > 0) == is_present, f'{username} not in {groupname}'
