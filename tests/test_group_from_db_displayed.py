@@ -7,7 +7,6 @@ from helpers.db_helper import check_user_in_group_db, clear_db_user_groups_table
 import allure
 from time import sleep
 
-
 allure.story("Check that Group assigned to User is sent to DB")
 
 
