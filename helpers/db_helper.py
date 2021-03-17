@@ -2,7 +2,8 @@ from sqlalchemy import create_engine
 
 
 def clear_db_user_groups_table():
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
     engine.execute('TRUNCATE TABLE auth_user_groups CASCADE')
 
 
