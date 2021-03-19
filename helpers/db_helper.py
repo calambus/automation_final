@@ -3,13 +3,13 @@ from sqlalchemy import create_engine
 
 def clear_db_user_groups_table():
     # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.4/postgres')
     engine.execute('TRUNCATE TABLE auth_user_groups CASCADE')
 
 
 def clear_db_user_not_admin():
     # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.4/postgres')
     engine.execute("DELETE FROM auth_user WHERE username != 'admin'")
 
 
@@ -24,6 +24,6 @@ def check_user_in_group_db(username: str, groupname: str, is_present=True):
         and ag.name in ('{groupname}')
     '''
     # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.4/postgres')
     t = engine.execute(query).fetchall()
     assert (len(t) > 0) == is_present, f'{username} not in {groupname}'

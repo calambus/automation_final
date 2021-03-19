@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import Select
 import allure
 from allure_commons.types import AttachmentType
 
+
 class AddUserPage(BasePage, AddUserLocators):
 
     def add_user_with_group(self, username, password, group, browser):

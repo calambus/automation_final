@@ -25,7 +25,7 @@ def browser():
 def create_group():
     name = generate_string(8)
     # engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/postgres')
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.2/postgres')
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@172.18.0.4/postgres')
     auth_group_table = table("auth_group",
                              column("id"),
                              column("name")
